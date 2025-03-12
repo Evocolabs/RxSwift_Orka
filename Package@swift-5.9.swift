@@ -55,7 +55,7 @@ let package = Package(
   platforms: [.iOS(.v12), .macOS(.v10_13), .watchOS(.v4), .tvOS(.v12), .visionOS(.v1)],
   products: ([
     [
-      .library(name: "RxSwift", targets: ["RxSwift"]),
+      .library(name: "MyRxSwift", targets: ["RxSwift"]),
       .library(name: "RxCocoa", targets: ["RxCocoa"]),
       .library(name: "RxRelay", targets: ["RxRelay"]),
       .library(name: "RxBlocking", targets: ["RxBlocking"]),

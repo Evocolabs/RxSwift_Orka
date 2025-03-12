@@ -55,12 +55,12 @@ let package = Package(
   platforms: [.iOS(.v9), .macOS(.v10_10), .watchOS(.v3), .tvOS(.v9)],
   products: ([
     [
-      .library(name: "RxSwift", targets: ["RxSwift"]),
+      .library(name: "OrkaRxSwift", targets: ["OrkaRxSwift"]),
       .library(name: "RxCocoa", targets: ["RxCocoa"]),
       .library(name: "RxRelay", targets: ["RxRelay"]),
       .library(name: "RxBlocking", targets: ["RxBlocking"]),
       .library(name: "RxTest", targets: ["RxTest"]),
-      .library(name: "RxSwift-Dynamic", type: .dynamic, targets: ["RxSwift"]),
+      .library(name: "RxSwift-Dynamic", type: .dynamic, targets: ["OrkaRxSwift"]),
       .library(name: "RxCocoa-Dynamic", type: .dynamic, targets: ["RxCocoa"]),
       .library(name: "RxRelay-Dynamic", type: .dynamic, targets: ["RxRelay"]),
       .library(name: "RxBlocking-Dynamic", type: .dynamic, targets: ["RxBlocking"]),
@@ -70,14 +70,14 @@ let package = Package(
   ] as [[Product]]).flatMap { $0 },
   targets: ([
     [
-      .rxTarget(name: "RxSwift", dependencies: []),
+      .rxTarget(name: "OrkaRxSwift", dependencies: []),
     ],
     Target.rxCocoa(),
     Target.rxCocoaRuntime(),
     [
-      .rxTarget(name: "RxRelay", dependencies: ["RxSwift"]),
-      .target(name: "RxBlocking", dependencies: ["RxSwift"]),
-      .target(name: "RxTest", dependencies: ["RxSwift"]),
+      .rxTarget(name: "RxRelay", dependencies: ["OrkaRxSwift"]),
+      .target(name: "RxBlocking", dependencies: ["OrkaRxSwift"]),
+      .target(name: "RxTest", dependencies: ["OrkaRxSwift"]),
     ],
     Target.allTests()
   ] as [[Target]]).flatMap { $0 },
